@@ -606,3 +606,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+
+### TP3 Cloud Computing (Khazri Salah Eddine)
+# Classpaths générés par "mvn dependency:build-classpath" (chemins propres à la machine locale)
+cp.txt
+**/cp.txt
+# Fichiers temporaires de Word (rapport ouvert)
+Rapport/~$*

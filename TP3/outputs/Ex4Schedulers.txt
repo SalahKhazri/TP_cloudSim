@@ -1,0 +1,50 @@
+
+=== CloudletSchedulerSpaceShared ===
+Cloudlet VM  Start    Finish   Time    
+0        0   0.01     10.01    10.00   
+1        0   10.01    20.01    10.00   
+2        0   20.01    30.01    10.00   
+Makespan = 30.01 s
+
+=== CloudletSchedulerTimeShared ===
+Cloudlet VM  Start    Finish   Time    
+0        0   0.01     30.01    30.00   
+1        0   0.01     30.01    30.00   
+2        0   0.01     30.01    30.00   
+Makespan = 30.01 s
+
+=== VmSchedulerSpaceShared - 2 VMs de 1 PE x 1000 MIPS ===
+Cloudlet VM  Start    Finish   Time    
+0        0   0.01     30.01    30.00   
+1        0   0.01     30.01    30.00   
+2        0   0.01     30.01    30.00   
+Makespan = 30.01 s
+  VM 0 : Datacenter_0 / Host 0
+  VM 1 : ECHEC dans Datacenter_0
+
+=== VmSchedulerTimeShared - 2 VMs de 1 PE x 1000 MIPS ===
+Cloudlet VM  Start    Finish   Time    
+0        0   0.01     30.01    30.00   
+1        0   0.01     30.01    30.00   
+2        0   0.01     30.01    30.00   
+Makespan = 30.01 s
+  VM 0 : Datacenter_0 / Host 0
+  VM 1 : ECHEC dans Datacenter_0
+
+=== VmSchedulerSpaceShared - 2 VMs de 1 PE x 500 MIPS ===
+Cloudlet VM  Start    Finish   Time    
+0        0   0.01     60.01    60.00   
+1        0   0.01     60.01    60.00   
+2        0   0.01     60.01    60.00   
+Makespan = 60.01 s
+  VM 0 : Datacenter_0 / Host 0
+  VM 1 : ECHEC dans Datacenter_0
+
+=== VmSchedulerTimeShared - 2 VMs de 1 PE x 500 MIPS ===
+Cloudlet VM  Start    Finish   Time    
+0        0   0.01     40.01    40.00   
+1        1   0.01     20.01    20.00   
+2        0   0.01     40.01    40.00   
+Makespan = 40.01 s
+  VM 0 : Datacenter_0 / Host 0
+  VM 1 : Datacenter_0 / Host 0

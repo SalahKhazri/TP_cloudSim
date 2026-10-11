@@ -1,0 +1,36 @@
+Starting CloudSimExample2...
+Initialising...
+Starting CloudSim version 7.0
+0.0: Datacenter_0 is starting...
+0.0: Broker is starting...
+Entities started.
+0.0: Broker: Cloud Resource List received with 1 datacenter(s)
+0.0: Broker: Trying to Create Vm #0 in Datacenter_0
+0.0: Broker: Trying to Create Vm #1 in Datacenter_0
+0.0: Datacenter_0.guestAllocator: Vm #0 has been allocated to Host #0
+0.0: Datacenter_0.guestAllocator: Vm #1 has been allocated to Host #0
+0.01: Broker: Vm #0 has been created in Datacenter #2, Host #0
+0.01: Broker: Vm #1 has been created in Datacenter #2, Host #0
+0.01: Broker: Sending Cloudlet #0 to Vm #0
+0.01: Broker: Sending Cloudlet #1 to Vm #1
+1000.01: Broker: Cloudlet #0 return received
+1000.01: Broker: The number of finished Cloudlets is:1
+1000.01: Broker: Cloudlet #1 return received
+1000.01: Broker: The number of finished Cloudlets is:2
+1000.01: Broker: All Cloudlets executed. Finishing...
+1000.01: Broker: Destroying Vm #0
+1000.01: Broker: Destroying Vm #1
+1000.01: Broker is shutting down...
+1000.01: Simulation: No more future events
+1000.01: CloudInformationService is shutting down...
+1000.01: CloudInformationService: Notify all CloudSim entities for shutting down.
+1000.01: Datacenter_0 is shutting down...
+1000.01: Broker is shutting down...
+Simulation completed.
+Simulation completed.
+
+========== OUTPUT ==========
+Cloudlet ID    STATUS    Data center ID    VM ID    Time    Start Time    Finish Time
+    0        SUCCESS        2            0        1000        0,01        1000,01
+    1        SUCCESS        2            1        1000        0,01        1000,01
+CloudSimExample2 finished!

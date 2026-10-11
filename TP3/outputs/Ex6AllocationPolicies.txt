@@ -1,0 +1,21 @@
+
+##### VMs (PEs) = [2, 4, 1, 3, 2, 1, 1, 2] -> 16 PEs demandés / 18 disponibles #####
+Politique                      | Hôtes | VMs placées sur chaque hôte (VM:PEs)                           | VMs échouées | Makespan
+VmAllocationPolicySimple       | 4     | H0[0:2,1:4,5:1] H1[2:1,4:2] H2[3:3] H3[6:1]                    | VM7          | 20.10 s (7/8 cloudlets)
+VmAllocationPolicyFirstFit     | 4     | H0[0:2,1:4,2:1] H1[3:3] H2[4:2,5:1,6:1] H3[7:2]                | aucune       | 20.10 s (8/8 cloudlets)
+VmAllocationPolicyBestFit      | 4     | H0[4:2,5:1,6:1,7:2] H1[1:4] H2[2:1,3:3] H3[0:2]                | aucune       | 20.10 s (8/8 cloudlets)
+VmAllocationPolicyRoundRobin   | 4     | H0[0:2,3:3,6:1,7:2] H1[1:4] H2[2:1,4:2] H3[5:1]                | aucune       | 20.10 s (8/8 cloudlets)
+
+##### VMs (PEs) = [2, 4, 1, 3, 2, 1, 3, 2] -> 18 PEs demandés / 18 disponibles #####
+Politique                      | Hôtes | VMs placées sur chaque hôte (VM:PEs)                           | VMs échouées | Makespan
+VmAllocationPolicySimple       | 4     | H0[0:2,1:4,5:1] H1[2:1,4:2] H2[3:3] H3[7:2]                    | VM6          | 20.10 s (7/8 cloudlets)
+VmAllocationPolicyFirstFit     | 4     | H0[0:2,1:4,2:1] H1[3:3] H2[4:2,5:1] H3[7:2]                    | VM6          | 20.10 s (7/8 cloudlets)
+VmAllocationPolicyBestFit      | 4     | H0[4:2,5:1,6:3,7:2] H1[1:4] H2[2:1,3:3] H3[0:2]                | aucune       | 20.10 s (8/8 cloudlets)
+VmAllocationPolicyRoundRobin   | 4     | H0[0:2,3:3,6:3] H1[1:4] H2[2:1,4:2] H3[5:1]                    | VM7          | 20.10 s (7/8 cloudlets)
+
+##### VMs (PEs) = [2, 1, 3, 1, 2, 1, 1, 1] -> 12 PEs demandés / 18 disponibles #####
+Politique                      | Hôtes | VMs placées sur chaque hôte (VM:PEs)                           | VMs échouées | Makespan
+VmAllocationPolicySimple       | 3     | H0[0:2,1:1,2:3,6:1] H1[3:1,5:1,7:1] H2[4:2] H3[]               | aucune       | 20.10 s (8/8 cloudlets)
+VmAllocationPolicyFirstFit     | 3     | H0[0:2,1:1,2:3,3:1] H1[4:2,5:1,6:1] H2[7:1] H3[]               | aucune       | 20.10 s (8/8 cloudlets)
+VmAllocationPolicyBestFit      | 4     | H0[6:1,7:1] H1[1:1,2:3] H2[3:1,4:2,5:1] H3[0:2]                | aucune       | 20.10 s (8/8 cloudlets)
+VmAllocationPolicyRoundRobin   | 4     | H0[0:2,4:2] H1[1:1,5:1] H2[2:3,6:1] H3[3:1,7:1]                | aucune       | 20.10 s (8/8 cloudlets)

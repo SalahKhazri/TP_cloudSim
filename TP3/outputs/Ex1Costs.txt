@@ -1,0 +1,31 @@
+
+=== Q1 - CloudSimExample2 inchangé ===
+Cloudlet STATUS   DC   VM  Length   CPU Time  Start     Finish    Cost       CPU cost(*) 
+0        SUCCESS  2    0   250000   1000.00   0.01      1000.01   0.00       3000.00     
+1        SUCCESS  2    1   250000   1000.00   0.01      1000.01   0.00       3000.00     
+(*) CPU cost = actual CPU time x cost per second (3.0 $/s)
+Total Cost (getProcessingCost) = 0.00 | Total CPU cost = 6000.00 | Total utilisateur (CPU + transfert) = 6000.00
+
+=== Q2/Q3 - 3 cloudlets (40k, 80k, 120k MI), cost=3.0 $/s, costPerBw=0.0 ===
+Cloudlet STATUS   DC   VM  Length   CPU Time  Start     Finish    Cost       CPU cost(*) 
+0        SUCCESS  2    0   40000    160.00    0.01      160.01    0.00       480.00      
+1        SUCCESS  2    1   80000    320.00    0.01      320.01    0.00       960.00      
+2        SUCCESS  2    2   120000   480.00    0.01      480.01    0.00       1440.00     
+(*) CPU cost = actual CPU time x cost per second (3.0 $/s)
+Total Cost (getProcessingCost) = 0.00 | Total CPU cost = 2880.00 | Total utilisateur (CPU + transfert) = 2880.00
+
+=== Q4 - même scénario avec costPerBw=0.1 $/MB ===
+Cloudlet STATUS   DC   VM  Length   CPU Time  Start     Finish    Cost       CPU cost(*) 
+0        SUCCESS  2    0   40000    160.00    0.01      160.01    60.00      480.00      
+1        SUCCESS  2    1   80000    320.00    0.01      320.01    60.00      960.00      
+2        SUCCESS  2    2   120000   480.00    0.01      480.01    60.00      1440.00     
+(*) CPU cost = actual CPU time x cost per second (3.0 $/s)
+Total Cost (getProcessingCost) = 180.00 | Total CPU cost = 2880.00 | Total utilisateur (CPU + transfert) = 3060.00
+
+=== Q5 - coût par seconde doublé (6.0 $/s) ===
+Cloudlet STATUS   DC   VM  Length   CPU Time  Start     Finish    Cost       CPU cost(*) 
+0        SUCCESS  2    0   40000    160.00    0.01      160.01    0.00       960.00      
+1        SUCCESS  2    1   80000    320.00    0.01      320.01    0.00       1920.00     
+2        SUCCESS  2    2   120000   480.00    0.01      480.01    0.00       2880.00     
+(*) CPU cost = actual CPU time x cost per second (6.0 $/s)
+Total Cost (getProcessingCost) = 0.00 | Total CPU cost = 5760.00 | Total utilisateur (CPU + transfert) = 5760.00

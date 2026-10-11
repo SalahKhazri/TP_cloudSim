@@ -1,3 +1,84 @@
+# TP3 Cloud Computing — CloudSim 7.0.1 & CloudSim Plus 8.5.7
+
+**Réalisé par :** Khazri Salah Eddine — LSI S5
+
+**Encadré par :** Prof. C. El Amrani
+
+Ce dépôt contient le projet CloudSim 7.0.1 complet, plus mon travail pour l'**Assignment 3** :
+
+| Dossier / fichier | Contenu |
+|---|---|
+| [`Rapport/Rapport_TP3_Khazri_Salah_Eddine.pdf`](Rapport/Rapport_TP3_Khazri_Salah_Eddine.pdf) | **Rapport du TP** (version PDF) |
+| [`Rapport/Rapport_TP3_Khazri_Salah_Eddine.docx`](Rapport/Rapport_TP3_Khazri_Salah_Eddine.docx) | Rapport (version Word) |
+| [`Rapport/Assignment_3.pdf`](Rapport/Assignment_3.pdf) | Énoncé |
+| [`TP3/cloudsim7/`](TP3/cloudsim7/) | Partie 1 : exercices 1 à 4 (CloudSim 7.0.1) |
+| [`TP3/cloudsimplus/`](TP3/cloudsimplus/) | Partie 2 : exercices 5 à 7 (CloudSim Plus 8.5.7) |
+| [`TP3/outputs/`](TP3/outputs/) | Sorties complètes de toutes les exécutions |
+
+## Exercices
+
+| Exercice | Classe principale | Sujet |
+|---|---|---|
+| 1 | `tp3.Ex1Costs` | Coût des cloudlets (basé sur CloudSimExample2) |
+| 2 | `tp3.Ex2Heterogeneous` | Hôtes hétérogènes, temps d'exécution, heuristique LJF |
+| 3 | `tp3.Ex3MultiDatacenters` | 3 datacenters, 3 utilisateurs, broker sensible au coût |
+| 4 | `tp3.Ex4Schedulers` | Ordonnancement time-shared vs space-shared |
+| 5 | `tp3plus.BasicFirstExample`, `tp3plus.Ex5Heterogeneous`, `tp3plus.Ex5CostsEx1` | Passage à CloudSim Plus, coûts avec `VmCost` |
+| 6 | `tp3plus.Ex6AllocationPolicies` | Politiques d'allocation de VMs (Simple, FirstFit, BestFit, RoundRobin) |
+| 7 | `tp3plus.Ex7Brokers` | Brokers et répartition de charge (Simple vs BestFit) |
+
+Classes auxiliaires CloudSim 7 : `Cs7Util` (création des entités), `RecordingBroker` (mémorise le datacenter et l'hôte de chaque VM), `VmAllocationPolicyFixed` (VM i sur l'hôte i), `CostAwareBroker` (choisit d'abord le datacenter le moins cher).
+
+## Exécution
+
+Prérequis : **JDK 21** et **Maven 3.9+**.
+
+**1. Installer CloudSim 7.0.1 dans le dépôt Maven local** (à faire une seule fois, depuis la racine du dépôt).
+Cette étape est obligatoire : CloudSim 7.0.1 n'est pas publié sur Maven Central, et `TP3/cloudsim7` en dépend.
+
+```bash
+mvn clean install -DskipTests
+```
+
+**2. Partie 1 — CloudSim 7.0.1**
+
+```bash
+cd TP3/cloudsim7
+mvn -q compile exec:java -Dexec.mainClass=tp3.Ex1Costs
+mvn -q compile exec:java -Dexec.mainClass=tp3.Ex2Heterogeneous
+mvn -q compile exec:java -Dexec.mainClass=tp3.Ex3MultiDatacenters
+mvn -q compile exec:java -Dexec.mainClass=tp3.Ex4Schedulers
+```
+
+**3. Partie 2 — CloudSim Plus 8.5.7** (téléchargé automatiquement depuis Maven Central)
+
+```bash
+cd TP3/cloudsimplus
+mvn -q compile exec:java -Dexec.mainClass=tp3plus.BasicFirstExample
+mvn -q compile exec:java -Dexec.mainClass=tp3plus.Ex5Heterogeneous
+mvn -q compile exec:java -Dexec.mainClass=tp3plus.Ex5CostsEx1
+mvn -q compile exec:java -Dexec.mainClass=tp3plus.Ex6AllocationPolicies
+mvn -q compile exec:java -Dexec.mainClass=tp3plus.Ex7Brokers
+```
+
+> Sous Windows, si les accents s'affichent mal dans la console, lancer d'abord `chcp 65001`.
+
+## Résultats principaux
+
+- **Ex. 1** — Dans CloudSim 7, `getProcessingCost()` ne compte que la bande passante (la partie CPU est commentée dans le code source), d'où 0 $ affiché. Le coût CPU réel est 2880 $, puis 5760 $ si le coût par seconde est doublé.
+- **Ex. 2** — Makespan de 180 s avec l'affectation round-robin, 60 s avec LJF (−67 %).
+- **Ex. 3** — Le broker par défaut remplit le premier datacenter sans regarder le prix. Un broker sensible au coût divise la facture par deux (1280 → 640 $), et LJF ramène le makespan de 80 à 60 s.
+- **Ex. 4** — Les prédictions des diagrammes de Gantt sont confirmées. La seconde VM n'est créée qu'avec `VmSchedulerTimeShared` et des VMs de 500 MIPS.
+- **Ex. 5** — 75 lignes en CloudSim Plus contre environ 197 en CloudSim 7, pour des résultats identiques. Les modèles de coût diffèrent : facturation par cloudlet dans CloudSim 7, par VM dans CloudSim Plus.
+- **Ex. 6** — Seule BestFit place les 8 VMs quand le datacenter est plein ; RoundRobin et Simple étalent la charge.
+- **Ex. 7** — Simple : 162,75 s ; BestFit avec ressoumission de la file d'attente : 79,20 s ; mapper MCT personnalisé : 73,89 s.
+
+Le détail de chaque exercice (configuration, tableaux, analyses) se trouve dans le rapport.
+
+---
+
+*Le reste de ce fichier est le README original de CloudSim.*
+
 # CloudSim: A Framework For Modeling And Simulation Of Cloud Computing Infrastructures And Services #
 
 Cloud Computing is the leading approach for delivering reliable, secure, fault-tolerant, sustainable, and scalable computational services. Hence timely, repeatable, and controllable methodologies for performance evaluation of new cloud applications and policies before their actual development are required. Because utilization of real testbeds limits the experiments to the scale of the testbed and makes the reproduction of results an extremely difficult undertaking, simulation may be used.

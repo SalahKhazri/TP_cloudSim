@@ -1,0 +1,30 @@
+
+=== Affectation initiale (cloudlet i -> VM i mod 4) ===
+Placement des VMs :
+  VM 0 (1 PE x 1000 MIPS) -> Datacenter_0 / Host 0
+  VM 1 (1 PE x 1500 MIPS) -> Datacenter_0 / Host 1
+  VM 2 (2 PE x 2000 MIPS) -> Datacenter_0 / Host 2
+  VM 3 (1 PE x 3000 MIPS) -> Datacenter_0 / Host 3
+Cloudlet Length   VM  VM MIPS  Start    Finish   Exec time  Length/MIPS   
+0        30000    0   1000     0.01     60.01    60.00      30.00         
+1        60000    1   1500     0.01     40.01    40.00      40.00         
+2        90000    2   2000     0.01     45.01    45.00      45.00         
+3        120000   3   3000     0.01     40.01    40.00      40.00         
+4        150000   0   1000     0.01     180.01   180.00     150.00        
+Makespan = 180.01 s
+
+=== Affectation optimisée LJF (plus long cloudlet -> VM qui le termine le plus tôt) ===
+Placement des VMs :
+  VM 0 (1 PE x 1000 MIPS) -> Datacenter_0 / Host 0
+  VM 1 (1 PE x 1500 MIPS) -> Datacenter_0 / Host 1
+  VM 2 (2 PE x 2000 MIPS) -> Datacenter_0 / Host 2
+  VM 3 (1 PE x 3000 MIPS) -> Datacenter_0 / Host 3
+Cloudlet Length   VM  VM MIPS  Start    Finish   Exec time  Length/MIPS   
+0        30000    0   1000     0.01     30.01    30.00      30.00         
+1        60000    1   1500     0.01     40.01    40.00      40.00         
+2        90000    2   2000     0.01     45.01    45.00      45.00         
+3        120000   2   2000     0.01     60.01    60.00      60.00         
+4        150000   3   3000     0.01     50.01    50.00      50.00         
+Makespan = 60.01 s
+
+Makespan initial = 180.01 s ; makespan LJF = 60.01 s ; gain = 66.66 %

@@ -1,0 +1,32 @@
+
+
+                             Scénario de l'exercice 1 avec CloudSim Plus
+
+|Cloudlet| Status|DC|Host|Host PEs |VM|   VM PEs|CloudletLen|FinishedLen|CloudletPEs|StartTime|FinishTime|ExecTime
+|--------|-------|--|----|---------|--|---------|-----------|-----------|-----------|---------|----------|--------
+|      ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|         MI|  CPU cores|  Seconds|   Seconds| Seconds
+|       0|SUCCESS| 1|   0|        1| 0|        1|      40000|      40000|          1|      0.1|     160.1|   160.0
+|       1|SUCCESS| 1|   0|        1| 1|        1|      80000|      80000|          1|      0.1|     320.2|   320.1
+|       2|SUCCESS| 1|   0|        1| 2|        1|     120000|     120000|          1|      0.1|     480.2|   480.1
+
+  VM 0 : CPU =  360.24 $ | RAM =  25.60 $ | Stockage =  10.00 $ | Total =  395.84 $ (durée 480.32 s)
+  VM 1 : CPU =  360.24 $ | RAM =  25.60 $ | Stockage =  10.00 $ | Total =  395.84 $ (durée 480.32 s)
+  VM 2 : CPU =  360.24 $ | RAM =  25.60 $ | Stockage =  10.00 $ | Total =  395.84 $ (durée 480.32 s)
+Coût total = 1187.52 $
+
+
+
+            Scénario de l'exercice 1 avec CloudSim Plus (VMs détruites dès qu'inactives)
+
+|Cloudlet| Status|DC|Host|Host PEs |VM|   VM PEs|CloudletLen|FinishedLen|CloudletPEs|StartTime|FinishTime|ExecTime
+|--------|-------|--|----|---------|--|---------|-----------|-----------|-----------|---------|----------|--------
+|      ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|         MI|  CPU cores|  Seconds|   Seconds| Seconds
+|       0|SUCCESS| 1|   0|        1| 0|        1|      40000|      40000|          1|      0.1|     160.1|   160.0
+|       1|SUCCESS| 1|   0|        1| 1|        1|      80000|      80000|          1|      0.1|     320.2|   320.1
+|       2|SUCCESS| 1|   0|        1| 2|        1|     120000|     120000|          1|      0.1|     480.2|   480.1
+
+  VM 0 : CPU =  120.82 $ | RAM =  25.60 $ | Stockage =  10.00 $ | Total =  156.42 $ (durée 161.10 s)
+  VM 1 : CPU =  240.91 $ | RAM =  25.60 $ | Stockage =  10.00 $ | Total =  276.51 $ (durée 321.22 s)
+  VM 2 : CPU =  360.91 $ | RAM =  25.60 $ | Stockage =  10.00 $ | Total =  396.51 $ (durée 481.21 s)
+Coût total = 829.45 $
+

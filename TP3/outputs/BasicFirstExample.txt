@@ -1,0 +1,47 @@
+INFO  
+================== Starting CloudSim Plus 8.5.1 ==================
+
+INFO  0.00: #Datacenter 1 is starting...
+INFO  Broker 2 is starting...
+INFO  Entities started.
+INFO  0.00: DatacenterBrokerSimple2: List of 1 datacenters(s) received.
+INFO  0.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+INFO  0.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+INFO  0.00: HostSimple: Vm 0 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+INFO  0.00: VmAllocationPolicySimple: Vm 0 has been allocated to Host 0/#DC 1
+INFO  0.00: HostSimple: Vm 1 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+INFO  0.00: VmAllocationPolicySimple: Vm 1 has been allocated to Host 0/#DC 1
+INFO  0.10: DatacenterBrokerSimple2: Sending Cloudlet 0 to Vm 0 inside Host 0/#DC 1.
+INFO  0.10: DatacenterBrokerSimple2: Sending Cloudlet 1 to Vm 1 inside Host 0/#DC 1.
+INFO  0.10: DatacenterBrokerSimple2: Sending Cloudlet 2 to Vm 0 inside Host 0/#DC 1.
+INFO  0.10: DatacenterBrokerSimple2: Sending Cloudlet 3 to Vm 1 inside Host 0/#DC 1.
+INFO  0.10: DatacenterBrokerSimple2: All 4 waiting Cloudlets submitted to some VM.
+INFO  20.11: DatacenterBrokerSimple2: Cloudlet 0 finished in Vm 0 and returned to broker.
+INFO  20.11: DatacenterBrokerSimple2: Cloudlet 2 finished in Vm 0 and returned to broker.
+INFO  20.11: DatacenterBrokerSimple2: Cloudlet 1 finished in Vm 1 and returned to broker.
+INFO  20.11: DatacenterBrokerSimple2: Cloudlet 3 finished in Vm 1 and returned to broker.
+INFO  20.22: Processing last events before simulation shutdown.
+INFO  20.22: DatacenterBrokerSimple2 is shutting down...
+INFO  20.22: VmSimple: Requesting Vm 1 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+INFO  20.22: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+INFO  20.22: #Datacenter 1: Vm 1 destroyed on Host 0/#DC 1. 
+INFO  20.22: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. 
+INFO  Simulation: No more future events
+
+INFO  CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+
+INFO  
+================== Simulation finished at time 20.22 ==================
+
+
+
+                                         SIMULATION RESULTS
+
+|Cloudlet| Status|DC|Host|Host PEs |VM|   VM PEs|CloudletLen|FinishedLen|CloudletPEs|StartTime|FinishTime|ExecTime
+|--------|-------|--|----|---------|--|---------|-----------|-----------|-----------|---------|----------|--------
+|      ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|         MI|  CPU cores|  Seconds|   Seconds| Seconds
+|       0|SUCCESS| 1|   0|        8| 0|        4|      10000|      10000|          2|      0.1|      20.1|    20.0
+|       2|SUCCESS| 1|   0|        8| 0|        4|      10000|      10000|          2|      0.1|      20.1|    20.0
+|       1|SUCCESS| 1|   0|        8| 1|        4|      10000|      10000|          2|      0.1|      20.1|    20.0
+|       3|SUCCESS| 1|   0|        8| 1|        4|      10000|      10000|          2|      0.1|      20.1|    20.0
+
